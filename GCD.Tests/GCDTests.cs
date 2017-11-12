@@ -10,7 +10,7 @@ namespace Logic.Tests
     [TestFixture]
     public class GCDTests
     {
-        static object[] GCDCases =
+        private static object[] gcdCases =
         {
             new object[] { 1, 10, 1 },
             new object[] { 5, 10, 5 },
@@ -20,7 +20,7 @@ namespace Logic.Tests
         };
 
         #region EuclideanGCD method's tests
-        [TestCaseSource("GCDCases")]
+        [TestCaseSource("gcdCases")]
         public void EuclideanGCD_Params_EqualToExpectedResult(int a, int b, int r)
         {
             Assert.AreEqual(r, GCD.EuclideanGCD(a, b));
@@ -48,7 +48,7 @@ namespace Logic.Tests
         #endregion
 
         #region BinaryEuclideanGCD method's tests
-        [TestCaseSource("GCDCases")]
+        [TestCaseSource("gcdCases")]
         public void BinaryEuclideanGCD_Params_EqualToExpectedResult(int a, int b, int r)
         {
             Assert.AreEqual(r, GCD.BinaryEuclideanGCD(a, b));

@@ -12,49 +12,49 @@ namespace Task5.Tests
     public class JaggedArraySortWithComparerTests
     {
         #region Tests for method with IComparer
-        [TestCaseSource(typeof(SourceForTestingJaggedArray), "SumASCCases")]
+        [TestCaseSource(typeof(SourceForTestingJaggedArray), "sumASCCases")]
         public void BubbleSort_ComparerBySumASC_EqualToResult(int[][] array, int[][] result)
         {
             JaggedArraySortWithComparer.BubbleSort(array, new BySumElementsASC());
             Assert.True(array.EqualTo(result));
         }
 
-        [TestCaseSource(typeof(SourceForTestingJaggedArray), "SumDESCCases")]
+        [TestCaseSource(typeof(SourceForTestingJaggedArray), "sumDESCCases")]
         public void BubbleSort_ComparerBySumDESC_EqualToResult(int[][] array, int[][] result)
         {
             JaggedArraySortWithComparer.BubbleSort(array, new BySumElementsDESC());
             Assert.True(array.EqualTo(result));
         }
 
-        [TestCaseSource(typeof(SourceForTestingJaggedArray), "MinASCCases")]
+        [TestCaseSource(typeof(SourceForTestingJaggedArray), "minASCCases")]
         public void BubbleSort_ComparerByMinASC_EqualToResult(int[][] array, int[][] result)
         {
             JaggedArraySortWithComparer.BubbleSort(array, new ByMinElementASC());
             Assert.True(array.EqualTo(result));
         }
 
-        [TestCaseSource(typeof(SourceForTestingJaggedArray), "MinDESCCases")]
+        [TestCaseSource(typeof(SourceForTestingJaggedArray), "minDESCCases")]
         public void BubbleSort_ComparerByMinDESC_EqualToResult(int[][] array, int[][] result)
         {
             JaggedArraySortWithComparer.BubbleSort(array, new ByMinElementDESC());
             Assert.True(array.EqualTo(result));
         }
 
-        [TestCaseSource(typeof(SourceForTestingJaggedArray), "MaxASCCases")]
+        [TestCaseSource(typeof(SourceForTestingJaggedArray), "maxASCCases")]
         public void BubbleSort_ComparerByMaxASC_EqualToResult(int[][] array, int[][] result)
         {
             JaggedArraySortWithComparer.BubbleSort(array, new ByMaxElementASC());
             Assert.True(array.EqualTo(result));
         }
 
-        [TestCaseSource(typeof(SourceForTestingJaggedArray), "MaxDESCCases")]
+        [TestCaseSource(typeof(SourceForTestingJaggedArray), "maxDESCCases")]
         public void BubbleSort_ComparerByMaxDESC_EqualToResult(int[][] array, int[][] result)
         {
             JaggedArraySortWithComparer.BubbleSort(array, new ByMaxElementDESC());
             Assert.True(array.EqualTo(result));
         }
 
-        [TestCaseSource(typeof(SourceForTestingJaggedArray), "NullCases")]
+        [TestCaseSource(typeof(SourceForTestingJaggedArray), "nullCases")]
         public void BubbleSort_JaggedArrayWithNullArray_EqualToResult(int[][] array, int[][] result)
         {
             JaggedArraySortWithComparer.BubbleSort(array, new BySumElementsASC());
@@ -77,49 +77,49 @@ namespace Task5.Tests
 
         #region Tests for method with Comparison delegate 
 
-        [TestCaseSource(typeof(SourceForTestingJaggedArray), "SumASCCases")]
+        [TestCaseSource(typeof(SourceForTestingJaggedArray), "sumASCCases")]
         public void BubbleSortDelegate_ComparerBySumASC_EqualToResult(int[][] array, int[][] result)
         {
             JaggedArraySortWithComparer.BubbleSort(array, (x, y) => x.Sum().CompareTo(y.Sum()));
             Assert.True(array.EqualTo(result));
         }
 
-        [TestCaseSource(typeof(SourceForTestingJaggedArray), "SumDESCCases")]
+        [TestCaseSource(typeof(SourceForTestingJaggedArray), "sumDESCCases")]
         public void BubbleSortDelegate_ComparerBySumDESC_EqualToResult(int[][] array, int[][] result)
         {
             JaggedArraySortWithComparer.BubbleSort(array, (x, y) => -x.Sum().CompareTo(y.Sum()));
             Assert.True(array.EqualTo(result));
         }
 
-        [TestCaseSource(typeof(SourceForTestingJaggedArray), "MinASCCases")]
+        [TestCaseSource(typeof(SourceForTestingJaggedArray), "minASCCases")]
         public void BubbleSortDelegate_ComparerByMinASC_EqualToResult(int[][] array, int[][] result)
         {
             JaggedArraySortWithComparer.BubbleSort(array, (x, y) => x.Min().CompareTo(y.Min()));
             Assert.True(array.EqualTo(result));
         }
 
-        [TestCaseSource(typeof(SourceForTestingJaggedArray), "MinDESCCases")]
+        [TestCaseSource(typeof(SourceForTestingJaggedArray), "minDESCCases")]
         public void BubbleSortDelegate_ComparerByMinDESC_EqualToResult(int[][] array, int[][] result)
         {
             JaggedArraySortWithComparer.BubbleSort(array, (x, y) => -x.Min().CompareTo(y.Min()));
             Assert.True(array.EqualTo(result));
         }
 
-        [TestCaseSource(typeof(SourceForTestingJaggedArray), "MaxASCCases")]
+        [TestCaseSource(typeof(SourceForTestingJaggedArray), "maxASCCases")]
         public void BubbleSortDelegate_ComparerByMaxASC_EqualToResult(int[][] array, int[][] result)
         {
             JaggedArraySortWithComparer.BubbleSort(array, (x, y) => x.Max().CompareTo(y.Max()));
             Assert.True(array.EqualTo(result));
         }
 
-        [TestCaseSource(typeof(SourceForTestingJaggedArray), "MaxDESCCases")]
+        [TestCaseSource(typeof(SourceForTestingJaggedArray), "maxDESCCases")]
         public void BubbleSortDelegate_ComparerByMaxDESC_EqualToResult(int[][] array, int[][] result)
         {
             JaggedArraySortWithComparer.BubbleSort(array, (x, y) => -x.Max().CompareTo(y.Max()));
             Assert.True(array.EqualTo(result));
         }
 
-        [TestCaseSource(typeof(SourceForTestingJaggedArray), "NullCases")]
+        [TestCaseSource(typeof(SourceForTestingJaggedArray), "nullCases")]
         public void BubbleSortDelegate_JaggedArrayWithNullArray_EqualToResult(int[][] array, int[][] result)
         {
             JaggedArraySortWithComparer.BubbleSort(array, (x, y) => x.Sum().CompareTo(y.Sum()));

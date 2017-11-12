@@ -16,24 +16,46 @@ namespace Task5.Tests
         public static bool EqualTo(this int[][] lhs, int[][] rhs)
         {
             if (lhs == null || rhs == null)
+            {
                 return false;
+            }
+
             if (lhs == rhs)
+            {
                 return true;
+            }
+
             if (lhs.Length != rhs.Length)
+            {
                 return false;
+            }
 
             for (int i = 0; i < lhs.Length; i++)
             {
                 if (lhs[i] == rhs[i])
+                {
                     continue;
+                }
+
                 if (lhs[i] == null || rhs[i] == null)
+                {
                     return false;
+                }
+
                 if (lhs[i].Length != rhs[i].Length)
+                {
                     return false;
+                }
+
                 for (int j = 0; j < lhs[i].Length; j++)
+                {
                     if (lhs[i][j] != rhs[i][j])
+                    {
                         return false;
+                    }
+                }
             }
+
             return true;
         }
     }

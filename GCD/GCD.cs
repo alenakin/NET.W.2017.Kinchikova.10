@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Logic
 {
@@ -190,6 +186,7 @@ namespace Logic
                 b = r;
                 r = a % b;
             }
+
             return b;
         }
 
@@ -203,18 +200,28 @@ namespace Logic
             }
 
             while ((a & 1) == 0)
+            {
                 a >>= 1;
+            }
+
             while ((b & 1) == 0)
+            {
                 b >>= 1;
+            }
 
             while (a > 0)
             {
                 int t = Math.Abs(a - b) / 2;
                 if (a < b)
+                {
                     b = t;
+                }
                 else
+                {
                     a = t;
+                }
             }
+
             return b << k;
         }
         #endregion
@@ -226,13 +233,24 @@ namespace Logic
             s.Start();
             time = 0;
             if (a == 0 && b == 0)
+            {
                 throw new ArgumentException("GCD(0,0) can't be calculated");
+            }
+
             if (a == 0)
+            {
                 return b;
+            }
+
             if (b == 0)
+            {
                 return a;
+            }
+
             if (a == b)
+            {
                 return a;
+            }
 
             FindMaxAndMin(ref a, ref b);
 
@@ -254,13 +272,16 @@ namespace Logic
             s.Start();
             time = 0;
             if (numbers.Length < 2)
+            {
                 throw new ArgumentException("Must be 2 or more numbers");
+            }
 
             int gcd = algorithm(numbers[0], numbers[1]);
             for (int i = 2; i < numbers.Length; i++)
             {
                 gcd = algorithm(gcd, numbers[i]);
             }
+
             s.Stop();
             time = s.ElapsedMilliseconds;
             return gcd;

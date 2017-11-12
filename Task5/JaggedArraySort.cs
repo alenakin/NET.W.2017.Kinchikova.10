@@ -21,7 +21,9 @@ namespace Task5
         public static void BubbleSort(int[][] array, IComparer<int[]> comparer)
         {
             if (array == null || comparer == null)
+            {
                 throw new ArgumentNullException();
+            }
 
             bool swapped;
             for (int i = 0; i < array.Length - 1; i++)
@@ -30,7 +32,10 @@ namespace Task5
                 for (int j = 0; j < array.Length - i - 1; j++)
                 {
                     if (array[j] == null)
+                    {
                         continue;
+                    }
+
                     if (array[j + 1] == null
                         || comparer.Compare(array[j], array[j + 1]) == 1)
                     {
@@ -38,8 +43,11 @@ namespace Task5
                         swapped = true;
                     }
                 }
+
                 if (!swapped)
+                {
                     break;
+                }
             }
         }
         #endregion
@@ -47,7 +55,9 @@ namespace Task5
         public static void BubbleSort(int[][] array, Comparison<int[]> comparison)
         {
             if (array == null || comparison == null)
+            {
                 throw new ArgumentNullException();
+            }
 
             bool swapped;
             for (int i = 0; i < array.Length - 1; i++)
@@ -56,7 +66,10 @@ namespace Task5
                 for (int j = 0; j < array.Length - i - 1; j++)
                 {
                     if (array[j] == null)
+                    {
                         continue;
+                    }
+
                     if (array[j + 1] == null
                         || comparison(array[j], array[j + 1]) == 1)
                     {
@@ -64,8 +77,11 @@ namespace Task5
                         swapped = true;
                     }
                 }
+
                 if (!swapped)
+                {
                     break;
+                }
             }
         }
 
